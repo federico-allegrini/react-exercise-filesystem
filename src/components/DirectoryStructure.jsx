@@ -6,7 +6,7 @@ import Folder from './Folder';
 
 import styles from './DirectoryStructure.module.css'
 
-const DirectoryStructure = ({ name, files }) => {
+const DirectoryStructure = ({ name, files, visible = true }) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -14,16 +14,15 @@ const DirectoryStructure = ({ name, files }) => {
   };
 
   return (
-    <div className={styles['directory-structure']}>
+    <div className={styles['directory-structure'] + (visible ? " " + styles['visible'] : "")}>
       {files ? (
         <Folder name={name} open={open} onClick={handleClick} />
       ) : (
         <File name={name} />
       )}
-      {open &&
-        files.map(({ name, files }, index) => (
-          <DirectoryStructure key={index} name={name} files={files} />
-        ))}
+      {files?.map(({ name, files }, index) => (
+        <DirectoryStructure key={index} name={name} files={files} visible={open} />
+      ))}
     </div>
   );
 };
