@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import fileIcon from "../assets/file.png";
 
 import styles from './File.module.css'
@@ -9,6 +11,10 @@ const File = ({ name }) => {
       <span>{name}</span>
     </div>
   );
+};
+
+File.propTypes = {
+  name: PropTypes.string.isRequired
 };
 
 export default File;

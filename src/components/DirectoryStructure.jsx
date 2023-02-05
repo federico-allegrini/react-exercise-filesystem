@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import File from './File';
 import Folder from './Folder';
@@ -25,6 +26,14 @@ const DirectoryStructure = ({ name, files }) => {
         ))}
     </div>
   );
+};
+
+DirectoryStructure.propTypes = {
+  name: PropTypes.string.isRequired,
+  files: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    files: PropTypes.array
+  }))
 };
 
 export default DirectoryStructure;
