@@ -12,29 +12,3 @@ body {
   padding-left: 15px;
 }
 
-.folder,
-.file {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-}
-
-.folder {
-  cursor: pointer;
-}
-
-.folder img,
-.file img {
-  margin-right: 10px;
-}
-
-.folder span,
-.file span {
-  font-size: 14px;
-  color: #111;
-}
-
-.folder span {
-  font-weight: 600;
-}
-

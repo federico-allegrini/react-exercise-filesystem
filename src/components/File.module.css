@@ -1,0 +1,14 @@
+.file {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.file img {
+  margin-right: 10px;
+}
+
+.file span {
+  font-size: 14px;
+  color: #111;
+}

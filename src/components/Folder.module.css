@@ -1,0 +1,16 @@
+.folder {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.folder img {
+  margin-right: 10px;
+}
+
+.folder span {
+  font-size: 14px;
+  color: #111;
+  font-weight: 600;
+}

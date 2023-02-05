@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-import closedFolderIcon from "../assets/closed-folder.png";
-import openedFolderIcon from "../assets/opened-folder.png";
-import fileIcon from "../assets/file.png";
+import File from './File';
+import Folder from './Folder';
 
 import styles from './DirectoryStructure.module.css'
 
@@ -16,15 +15,9 @@ const DirectoryStructure = ({ name, files }) => {
   return (
     <div className={styles['directory-structure']}>
       {files ? (
-        <div onClick={handleClick} className={styles['folder']}>
-          <img src={open ? openedFolderIcon : closedFolderIcon} alt="folder" />
-          <span>{name}</span>
-        </div>
+        <Folder name={name} open={open} onClick={handleClick} />
       ) : (
-        <div className={styles['file']}>
-          <img src={fileIcon} alt="file" />
-          <span>{name}</span>
-        </div>
+        <File name={name} />
       )}
       {open &&
         files.map(({ name, files }, index) => (
